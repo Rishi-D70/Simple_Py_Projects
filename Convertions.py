@@ -1,21 +1,48 @@
 
 print("Welcome User!, This is a convertions program ")
 #classes and def for conversions are below
+class Distance():
+    def kmtoyards(self, valuetoconvert):
+        convertion =  valuetoconvert * 1093.6
+        print(f"{valuetoconvert}km --> {convertion} yd")
 
+    def kmtomiles(self, valuetoconvert):
+        convertion = valuetoconvert * 0.621371
+        print(f"{valuetoconvert}km --> {round(convertion, 2)} miles")
 
+    def milestokm(self, valuetoconvert):
+        convertion = valuetoconvert * 1.609344
+        print(f"{valuetoconvert}miles --> {round(convertion, 2)} km")
 
+class Temprature():
+    def celsiustokelvin(self, valuetoconvert):
+        convertion = valuetoconvert + 273.15
+        print(f"{valuetoconvert}°Celsius --> {round(convertion, 2)}Kelvin")
 
+    def kelvintof(self, valuetoconvert):
+        convertion = (valuetoconvert - 273.15) * 9/5 + 32
+        print(f"{valuetoconvert}kelvin --> {round(convertion, 2)}°F")
 
+    def celsiustof(self, valuetoconvert):
+        convertion = (valuetoconvert * 9/5) + 32
+        print(f"{valuetoconvert}°Celsius --> {round(convertion, 2)}°F")
 
+class Weight():
+    def kgtopund(self, valuetoconvert):
+        convertion = valuetoconvert * 2.20462262
+        print(f"{valuetoconvert}Kg --> {round(convertion, 2)}lb")
 
+    def kgtoounces(self, valuetoconvert):
+        convertion = valuetoconvert * 35.2739619
+        print(f"{valuetoconvert}Kg --> {round(convertion, 2)}oz")
 
+    def poundtoounces(self, valuetoconvert):
+        convertion = valuetoconvert * 16
+        print(f"{valuetoconvert}lb --> {round(convertion, 2)}oz")
 
-
-
-
-
-
-
+cd = Distance()
+ct = Temprature()
+cw = Weight()
 
 
 while True:
@@ -42,19 +69,19 @@ match (converstion_class):
                  try:
 
                      valuetoconvert = int(input("Enter a value to convert: "))
-
+                     cd.kmtoyards(valuetoconvert)
                          #use class and def here
                  except: print("Oops! Invalid input")
              case 2: #km - miles
                  try:
                      valuetoconvert = int(input("Enter a value to convert: "))
-
+                     cd.kmtomiles(valuetoconvert)
                     # use class and def here
                  except: print("Oops! Invalid input")
              case 3: #miles - km
                  try:
                      valuetoconvert = int(input("Enter a value to convert: "))
-
+                     cd.milestokm(valuetoconvert)
                      # use class and def here
                  except: print("Oops! Invalid input")
 
@@ -71,13 +98,14 @@ match (converstion_class):
             case 1: #c-k
              try:
                   valuetoconvert = int(input("Enter a value to convert: "))
-
+                  ct.celsiustokelvin(valuetoconvert)
                   # use class and def here
              except:
                    print("Oops! Invalid input")
             case 2:#k-f
              try:
                  valuetoconvert = int(input("Enter a value to convert: "))
+                 ct.kelvintof(valuetoconvert)
 
                  # use class and def here
              except:#c-f
@@ -85,6 +113,7 @@ match (converstion_class):
             case 3:
              try:
                   valuetoconvert = int(input("Enter a value to convert: "))
+                  ct.celsiustof(valuetoconvert)
 
              except:
                    print("Oops! Invalid input")
@@ -98,6 +127,7 @@ match (converstion_class):
         case 1:  # kg-pounds
              try:
               valuetoconvert = int(input("Enter a value to convert: "))
+              cw.kgtopund(valuetoconvert)
 
                           # use class and def here
              except: print("Oops! Invalid input")
@@ -105,6 +135,7 @@ match (converstion_class):
         case 2:  #
             try:
                 valuetoconvert = int(input("Enter a value to convert: "))
+                cw.kgtoounces(valuetoconvert)
 
                     # use class and def here
             except:
@@ -112,6 +143,7 @@ match (converstion_class):
         case 3:
             try:
                 valuetoconvert = int(input("Enter a value to convert: "))
+                cw.poundtoounces(valuetoconvert)
 
                     # use class and def here
             except:
